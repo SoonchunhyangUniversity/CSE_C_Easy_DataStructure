@@ -42,3 +42,35 @@ void display(ArrayListType *L)
 	for (i = 0; i < L->length; i++)
 		printf("%d\n", L->list[i]);
 }
+
+// position : 삽입하고자 하는 위치, item : 삽입하고자 하는 자료
+void add(ArrayListType *L, int position, element item)
+{
+	if (!is_full(L) && (position >= 0) && (position <= L->length))
+	{
+		int i;
+		for (i = (L->length - 1); i >= position; i--)
+			L->list[i + 1] = L->list[i];
+		L->list[position] = item;
+		L->length++;
+	}
+}
+
+// position : 삭제하고자 하는 위치, 반환 값 : 삭제되는 자료
+element delete(ArrayListType *L, int position)
+{
+	int i;
+	element item;
+
+	if (position < 0 || position >= L->length)
+		error("위치 오류");
+
+	item = L->list[position];
+
+	for (i = position; i < (L->length - 1); i++)
+		L->list[i] = L->list[i + 1];
+
+	L->length--;
+
+	return item;
+}
