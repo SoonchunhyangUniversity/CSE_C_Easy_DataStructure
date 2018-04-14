@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
 #define MAX_CHAR_PER_LINE 1000
 #define MAX_NAME 256
 #define TRUE 1
@@ -113,7 +111,7 @@ void add(LinkedListType *list, int position, element data)
 		ListNode *node = (ListNode *)malloc(sizeof(ListNode));
 
 		if (node == NULL)
-			error("메모리 할당에러");
+			error(" 메모리 할당에러");
 
 		node->data = data;
 		p = get_node_at(list, position - 1);
@@ -153,7 +151,7 @@ element get_entry(LinkedListType *list, int pos)
 	ListNode *p;
 
 	if (pos >= list->length)
-		error("위치 오류");
+		error(" 위치 오류");
 
 	p = get_node_at(list, pos);
 
@@ -176,13 +174,13 @@ void display(LinkedListType *buffer)
 	ListNode *tmp_node;
 	tmp_node = buffer->head;
 
-	printf("\n├────────────────┤\n");
+	printf("\n ├────────────────┤\n");
 	for (i = 0; i < buffer->length; i++)
 	{
-		printf(" %s", tmp_node->data.a);
+		printf("  %s", tmp_node->data.a);
 		tmp_node = tmp_node->link;
 	}
-	printf("├────────────────┤\n\n");
+	printf(" ├────────────────┤\n\n");
 }
 
 /* 리스트를 초기화 */
@@ -197,14 +195,14 @@ void init(LinkedListType *list)
 
 void help()
 {
-	printf("┌────────────────┐\n");
-	printf("│ i : 입력       │\n");
-	printf("│ d : 삭제       │\n");
-	printf("│ r : 파일 읽기  │\n");
-	printf("│ w : 파일 쓰기  │\n");
-	printf("│ q : 종료       │\n");
-	printf("└────────────────┘\n");
-	printf("명령어를 입력하시오 : ");
+	printf(" ┌────────────────┐\n");
+	printf(" │ i : 입력       │\n");
+	printf(" │ d : 삭제       │\n");
+	printf(" │ r : 파일 읽기  │\n");
+	printf(" │ w : 파일 쓰기  │\n");
+	printf(" │ q : 종료       │\n");
+	printf(" └────────────────┘\n");
+	printf(" 명령어를 입력하시오 : ");
 }
 
 /* 디스크 파일로부터 데이터를 읽기 */
@@ -220,12 +218,12 @@ void read_file(LinkedListType *buffer)
 	}
 	init(buffer);
 
-	printf("파일 이름 : ");
+	printf(" 파일 이름 : ");
 	scanf("%s", fname);
 
 	if ((fd = fopen(fname, "r")) == NULL)
 	{
-		warning("파일을 열 수 없습니다.");
+		warning(" 파일을 열 수 없습니다.");
 		return;
 	}
 
@@ -246,12 +244,12 @@ void write_file(LinkedListType *buffer)
 	element p;
 	int i;
 
-	printf("파일 이름 : ");
+	printf(" 파일 이름 : ");
 	scanf("%s", fname);
 
 	if ((fd = fopen(fname, "w")) == NULL)
 	{
-		printf("파일을 열 수 없습니다.\n");
+		printf(" 파일을 열 수 없습니다.\n");
 		return;
 	}
 
@@ -271,10 +269,10 @@ void delete_line(LinkedListType *buffer)
 	int position;
 
 	if (is_empty(buffer))
-		printf("지울 라인이 없습니다.\n");
+		printf(" 지울 라인이 없습니다.\n");
 	else
 	{
-		printf("지우고 싶은 라인번호를 입력하세요 : ");
+		printf(" 지우고 싶은 라인번호를 입력하세요 : ");
 		scanf("%d", &position);
 		delete(buffer, position);
 	}
@@ -289,10 +287,10 @@ void insert_line(LinkedListType *buffer)
 	char line[MAX_CHAR_PER_LINE];
 	element p;
 
-	printf("입력 행 번호를 입력하세요 : ");
+	printf(" 입력 행 번호를 입력하세요 : ");
 	scanf("%d", &position);
 
-	printf("내용을 입력하세요 : ");
+	printf(" 내용을 입력하세요 : ");
 	getchar();
 	fgets(line, MAX_CHAR_PER_LINE, stdin);
 
