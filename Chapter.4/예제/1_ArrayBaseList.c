@@ -81,8 +81,8 @@ int main()
 	ArrayListType *plist;
 
 	/*
-	ArrayListType의 구조체를 정적으로 생성하고 이 구조체를 가리키는
-	포인터를 함수의 매개 변수로 전달한다.
+		ArrayListType의 구조체를 정적으로 생성하고 이 구조체를 가리키는
+		포인터를 함수의 매개 변수로 전달한다.
 	*/
 	init(&list1);
 	add(&list1, 0, 10);
@@ -91,8 +91,8 @@ int main()
 	display(&list1);
 
 	/*
-	ArrayListType의 구조체를 동적으로 생성하고 이 구조체를 가리키는
-	포인터를 함수의 매개 변수로 전달한다.
+		ArrayListType의 구조체를 동적으로 생성하고 이 구조체를 가리키는
+		포인터를 함수의 매개 변수로 전달한다.
 	*/
 	plist = (ArrayListType *)malloc(sizeof(ArrayListType));
 	init(plist);
