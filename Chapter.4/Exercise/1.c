@@ -186,7 +186,6 @@
                 error("위치 오류");
             return L->list[position];
         }
-        //
         main()
         {
             ArrayListType list1;
