@@ -10,32 +10,32 @@ typedef struct
 	int length; // 현재 배열에 저장된 자료들의 개수
  } ArrayListType;
 
-// 오류 처리 함수
+/* 오류 처리 함수 */
 void error(char *message)
 {
 	fprintf(stderr, "%s\n", message);
 	exit(1);
 }
 
-// 리스트 초기화
+/* 리스트 초기화 */
 void init(ArrayListType *L)
 {
 	L->length = 0;
 }
 
-// 리스트가 비어 있으면 1을 반환 그렇지 않으면 0을 반환
+/* 리스트가 비어 있으면 1을 반환 그렇지 않으면 0을 반환 */
 int is_empty(ArrayListType *L)
 {
 	return L->length == 0;
 }
 
-// 리스트가 가득 차 있으면 1을 반환 그렇지 않으면 0을 반환
+/* 리스트가 가득 차 있으면 1을 반환 그렇지 않으면 0을 반환 */
 int is_full(ArrayListType *L)
 {
 	return L->length == MAX_LIST_SIZE;
 }
 
-// 리스트 출력
+/* 리스트 출력 */
 void display(ArrayListType *L)
 {
 	int i;
@@ -43,7 +43,7 @@ void display(ArrayListType *L)
 		printf("%d\n", L->list[i]);
 }
 
-// position : 삽입하고자 하는 위치, item : 삽입하고자 하는 자료
+/* position : 삽입하고자 하는 위치, item : 삽입하고자 하는 자료 */
 void add(ArrayListType *L, int position, element item)
 {
 	if (!is_full(L) && (position >= 0) && (position <= L->length))
@@ -56,7 +56,7 @@ void add(ArrayListType *L, int position, element item)
 	}
 }
 
-// position : 삭제하고자 하는 위치, 반환 값 : 삭제되는 자료
+/* position : 삭제하고자 하는 위치, 반환 값 : 삭제되는 자료 */
 element delete(ArrayListType *L, int position)
 {
 	int i;

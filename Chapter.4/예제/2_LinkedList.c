@@ -14,6 +14,7 @@ void error(char *message)
 	fprintf(stderr, "%s\n", message);
 	exit(1);
 }
+
 /*
 	phead : 리스트의 헤드 포인터의 포인터
 	p : 선행 노트
@@ -37,6 +38,7 @@ void insert_node(ListNode **phead, ListNode *p, ListNode *new_node)
 		p->link = new_node;
 	}
 }
+
 /*
 	phead : 헤드 포인터의 포인터
 	p : 삭제될 노드의 선행 노트
@@ -91,6 +93,7 @@ ListNode *search(ListNode *head, int x)
 
 	return p; // 탐색 실패일 경우 NULL 반환
 }
+
 /*
 	head1 = (a1, a2, ..., an) head2 = (b1, b2, ..., bn)을
 	(a1, ..., an, b1, ..., bn)으로 변환
@@ -116,6 +119,7 @@ ListNode *concat(ListNode *head1, ListNode *head2)
 		}
 	}
 }
+
 /* (e1, e2, ... en)을 (en, en-1, ..., e1)로 변환 */
 ListNode *reverse(ListNode * head)
 {
@@ -134,6 +138,7 @@ ListNode *reverse(ListNode * head)
 
 	return q; // q는 역순으로 된 리스트의 헤드포인터
 }
+
 /* 노드를 동적으로 생성하는 프로그램 */
 ListNode *create_node(element data, ListNode *link)
 {

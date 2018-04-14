@@ -14,6 +14,7 @@ void error(char *message)
 	fprintf(stderr, "%s\n", message);
 	exit(1);
 }
+
 /* 노드를 동적으로 생성하는 프로그램 */
 ListNode *create_node(element data, ListNode *link)
 {
@@ -28,6 +29,7 @@ ListNode *create_node(element data, ListNode *link)
 
 	return (new_node);
 }
+
 /* 리스트의 항목 출력 */
 void display(ListNode *head)
 {
@@ -43,6 +45,7 @@ void display(ListNode *head)
 		p = p->link;
 	} while (p != head);
 }
+
 /*
 	phead : 리스트의 헤드 포인터의 포인터
 	node : 삽입될 노드
@@ -60,6 +63,7 @@ void insert_first(ListNode **phead, ListNode *node)
 		(*phead)->link = node;
 	}
 }
+
 /*
 	phead : 리스트의 헤드 포인터의 포인터
 	node : 삽입될 노드
