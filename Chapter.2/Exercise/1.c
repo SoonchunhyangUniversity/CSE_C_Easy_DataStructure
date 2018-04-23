@@ -158,8 +158,11 @@
 
         답 : int sum(int n)
 	         {
-		         if( n == 1 ) return 1;
-		         else return (n + sum(n-1));
+		        int i, sum =0;
+                for(i = 1; i <= sum; i++)
+                    sum += i;
+
+                return sum;    
 	         }
 
     18. 이항 계수(binomial coefficient)를 계산하는 순환 함수를 작성하라. 이항 계수는 다음과 같이 순환적으로 정의된다.
